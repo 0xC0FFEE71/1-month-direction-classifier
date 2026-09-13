@@ -1,0 +1,200 @@
+{
+  "model_name": "linear_svc_baseline",
+  "model_type": "sklearn.svm._classes.LinearSVC",
+  "hyperparameters": {
+    "C": 1.0,
+    "class_weight": "balanced",
+    "dual": "auto",
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "loss": "squared_hinge",
+    "max_iter": 5000,
+    "multi_class": "ovr",
+    "penalty": "l2",
+    "random_state": 42,
+    "tol": 0.0001,
+    "verbose": 0
+  },
+  "data": {
+    "train_start": "2021-06-28T00:00:00",
+    "train_end": "2025-01-28T00:00:00",
+    "val_start": "2025-01-29T00:00:00",
+    "val_end": "2025-11-05T00:00:00",
+    "test_start": "2025-11-06T00:00:00",
+    "test_end": "2026-08-13T00:00:00",
+    "n_train": 2703,
+    "n_val": 585,
+    "n_test": 576
+  },
+  "class_labels": [
+    "buy",
+    "hold",
+    "sell"
+  ],
+  "baseline": {
+    "val": {
+      "macro_f1": 0.1916,
+      "weighted_f1": 0.2319,
+      "balanced_accuracy": 0.3333,
+      "per_class": {
+        "buy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "hold": {
+          "precision": 0.4034,
+          "recall": 1.0,
+          "f1": 0.5749
+        },
+        "sell": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          207,
+          0
+        ],
+        [
+          0,
+          236,
+          0
+        ],
+        [
+          0,
+          142,
+          0
+        ]
+      ]
+    },
+    "test": {
+      "macro_f1": 0.1818,
+      "weighted_f1": 0.2045,
+      "balanced_accuracy": 0.3333,
+      "per_class": {
+        "buy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "hold": {
+          "precision": 0.375,
+          "recall": 1.0,
+          "f1": 0.5455
+        },
+        "sell": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          181,
+          0
+        ],
+        [
+          0,
+          216,
+          0
+        ],
+        [
+          0,
+          179,
+          0
+        ]
+      ]
+    }
+  },
+  "metrics": {
+    "val": {
+      "macro_f1": 0.3615,
+      "weighted_f1": 0.3777,
+      "balanced_accuracy": 0.3625,
+      "per_class": {
+        "buy": {
+          "precision": 0.3646,
+          "recall": 0.3382,
+          "f1": 0.3509
+        },
+        "hold": {
+          "precision": 0.4466,
+          "recall": 0.4958,
+          "f1": 0.4699
+        },
+        "sell": {
+          "precision": 0.2748,
+          "recall": 0.2535,
+          "f1": 0.2637
+        }
+      },
+      "confusion_matrix": [
+        [
+          70,
+          93,
+          44
+        ],
+        [
+          68,
+          117,
+          51
+        ],
+        [
+          54,
+          52,
+          36
+        ]
+      ]
+    },
+    "test": {
+      "macro_f1": 0.3045,
+      "weighted_f1": 0.3161,
+      "balanced_accuracy": 0.3663,
+      "per_class": {
+        "buy": {
+          "precision": 0.3725,
+          "recall": 0.5249,
+          "f1": 0.4358
+        },
+        "hold": {
+          "precision": 0.4092,
+          "recall": 0.5741,
+          "f1": 0.4778
+        },
+        "sell": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          95,
+          75,
+          11
+        ],
+        [
+          85,
+          124,
+          7
+        ],
+        [
+          75,
+          104,
+          0
+        ]
+      ]
+    }
+  },
+  "notes": {
+    "threshold_buy": 0.05,
+    "threshold_sell": -0.05,
+    "label_definition": "buy if fwd_ret_20d >= 0.05; sell if fwd_ret_20d <= -0.05; hold otherwise",
+    "class_weight_strategy": "balanced - LinearSVC uses class_weight=balanced to mitigate hold-class dominance"
+  }
+}

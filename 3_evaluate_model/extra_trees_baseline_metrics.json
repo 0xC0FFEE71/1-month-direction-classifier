@@ -1,0 +1,207 @@
+{
+  "model_name": "extra_trees_baseline",
+  "model_type": "sklearn.ensemble._forest.ExtraTreesClassifier",
+  "hyperparameters": {
+    "bootstrap": false,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced",
+    "criterion": "gini",
+    "max_depth": 20,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 5,
+    "min_samples_split": 10,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "data": {
+    "train_start": "2021-06-28T00:00:00",
+    "train_end": "2025-01-28T00:00:00",
+    "val_start": "2025-01-29T00:00:00",
+    "val_end": "2025-11-05T00:00:00",
+    "test_start": "2025-11-06T00:00:00",
+    "test_end": "2026-08-13T00:00:00",
+    "n_train": 2703,
+    "n_val": 585,
+    "n_test": 576
+  },
+  "class_labels": [
+    "buy",
+    "hold",
+    "sell"
+  ],
+  "baseline": {
+    "val": {
+      "macro_f1": 0.1916,
+      "weighted_f1": 0.2319,
+      "balanced_accuracy": 0.3333,
+      "per_class": {
+        "buy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "hold": {
+          "precision": 0.4034,
+          "recall": 1.0,
+          "f1": 0.5749
+        },
+        "sell": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          207,
+          0
+        ],
+        [
+          0,
+          236,
+          0
+        ],
+        [
+          0,
+          142,
+          0
+        ]
+      ]
+    },
+    "test": {
+      "macro_f1": 0.1818,
+      "weighted_f1": 0.2045,
+      "balanced_accuracy": 0.3333,
+      "per_class": {
+        "buy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "hold": {
+          "precision": 0.375,
+          "recall": 1.0,
+          "f1": 0.5455
+        },
+        "sell": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          181,
+          0
+        ],
+        [
+          0,
+          216,
+          0
+        ],
+        [
+          0,
+          179,
+          0
+        ]
+      ]
+    }
+  },
+  "metrics": {
+    "val": {
+      "macro_f1": 0.3616,
+      "weighted_f1": 0.3755,
+      "balanced_accuracy": 0.3638,
+      "per_class": {
+        "buy": {
+          "precision": 0.4051,
+          "recall": 0.4638,
+          "f1": 0.4324
+        },
+        "hold": {
+          "precision": 0.4474,
+          "recall": 0.3602,
+          "f1": 0.3991
+        },
+        "sell": {
+          "precision": 0.2405,
+          "recall": 0.2676,
+          "f1": 0.2533
+        }
+      },
+      "confusion_matrix": [
+        [
+          96,
+          57,
+          54
+        ],
+        [
+          85,
+          85,
+          66
+        ],
+        [
+          56,
+          48,
+          38
+        ]
+      ]
+    },
+    "test": {
+      "macro_f1": 0.3378,
+      "weighted_f1": 0.3308,
+      "balanced_accuracy": 0.3498,
+      "per_class": {
+        "buy": {
+          "precision": 0.349,
+          "recall": 0.4917,
+          "f1": 0.4083
+        },
+        "hold": {
+          "precision": 0.2642,
+          "recall": 0.1944,
+          "f1": 0.224
+        },
+        "sell": {
+          "precision": 0.4012,
+          "recall": 0.3631,
+          "f1": 0.3812
+        }
+      },
+      "confusion_matrix": [
+        [
+          89,
+          58,
+          34
+        ],
+        [
+          111,
+          42,
+          63
+        ],
+        [
+          55,
+          59,
+          65
+        ]
+      ]
+    }
+  },
+  "notes": {
+    "threshold_buy": 0.05,
+    "threshold_sell": -0.05,
+    "label_definition": "buy if fwd_ret_20d >= 0.05; sell if fwd_ret_20d <= -0.05; hold otherwise",
+    "class_weight_strategy": "balanced - mitigates hold-class dominance"
+  }
+}

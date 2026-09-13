@@ -1,0 +1,160 @@
+{
+  "model_name": "mlp_classifier_baseline",
+  "model_type": "sklearn.neural_network._multilayer_perceptron.MLPClassifier",
+  "search_method": "randomized",
+  "search_budget": "medium",
+  "search_space": {
+    "model__hidden_layer_sizes": [
+      [
+        64
+      ],
+      [
+        128
+      ],
+      [
+        64,
+        32
+      ],
+      [
+        128,
+        64
+      ]
+    ],
+    "model__alpha": [
+      0.0001,
+      0.001,
+      0.01
+    ],
+    "model__learning_rate_init": [
+      0.0005,
+      0.001,
+      0.003
+    ],
+    "model__batch_size": [
+      32,
+      64,
+      128
+    ],
+    "model__early_stopping": [
+      true
+    ]
+  },
+  "best_params": {
+    "model__learning_rate_init": 0.001,
+    "model__hidden_layer_sizes": [
+      128
+    ],
+    "model__early_stopping": true,
+    "model__batch_size": 128,
+    "model__alpha": 0.01
+  },
+  "cv_results_summary": {
+    "best_cv_score": 0.37687303446759557,
+    "n_trials": 50
+  },
+  "data": {
+    "train_start": "2021-06-28",
+    "train_end": "2025-01-29",
+    "val_start": "2025-01-29",
+    "val_end": "2025-11-04",
+    "test_start": "2025-11-04",
+    "test_end": "2026-08-13",
+    "n_train": 2704,
+    "n_val": 580,
+    "n_test": 580
+  },
+  "baseline_test_metrics": {
+    "macro_f1": 0.3286,
+    "weighted_f1": 0.3374,
+    "balanced_accuracy": 0.3634,
+    "per_class": {
+      "buy": {
+        "precision": 0.3551,
+        "recall": 0.4807,
+        "f1": 0.4085
+      },
+      "hold": {
+        "precision": 0.4028,
+        "recall": 0.537,
+        "f1": 0.4603
+      },
+      "sell": {
+        "precision": 0.3023,
+        "recall": 0.0726,
+        "f1": 0.1171
+      }
+    },
+    "confusion_matrix": [
+      [
+        87,
+        74,
+        20
+      ],
+      [
+        90,
+        116,
+        10
+      ],
+      [
+        68,
+        98,
+        13
+      ]
+    ]
+  },
+  "tuned_val_metrics": {
+    "macro_f1": 0.37687303446759557
+  },
+  "tuned_test_metrics": {
+    "accuracy": 0.33620689655172414,
+    "balanced_accuracy": 0.32543805062915027,
+    "macro_f1": 0.30651125425034426,
+    "weighted_f1": 0.3147073443450042,
+    "f1_buy": 0.3448275862068966,
+    "f1_hold": 0.4274193548387097,
+    "f1_sell": 0.14728682170542637,
+    "confusion_matrix": [
+      [
+        70,
+        78,
+        33
+      ],
+      [
+        87,
+        106,
+        26
+      ],
+      [
+        68,
+        93,
+        19
+      ]
+    ]
+  },
+  "comparison": {
+    "baseline_test_macro_f1": 0.3286,
+    "tuned_test_macro_f1": 0.30651125425034426,
+    "lift_test_macro_f1": -0.022088745749655747,
+    "baseline_test_f1_buy": 0.4085,
+    "tuned_test_f1_buy": 0.3448275862068966,
+    "baseline_test_f1_sell": 0.1171,
+    "tuned_test_f1_sell": 0.14728682170542637,
+    "stability_delta": 0.07036178021725131,
+    "flag_instability": true
+  },
+  "governance": {
+    "passed": false,
+    "reasons": [
+      "fail_test_macro_f1",
+      "fail_test_f1_sell",
+      "flag_instability"
+    ],
+    "flag_instability": true,
+    "val_macro_f1": 0.37687303446759557,
+    "test_macro_f1": 0.30651125425034426,
+    "test_f1_buy": 0.3448275862068966,
+    "test_f1_sell": 0.14728682170542637
+  },
+  "already_tuned": true,
+  "created_at": "2026-09-13T15:04:06.877636+00:00"
+}

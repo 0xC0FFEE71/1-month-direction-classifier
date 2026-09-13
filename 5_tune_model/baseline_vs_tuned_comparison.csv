@@ -1,0 +1,2 @@
+model_name,baseline_test_macro_f1,tuned_test_macro_f1,baseline_test_f1_buy,tuned_test_f1_buy,baseline_test_f1_sell,tuned_test_f1_sell,val_macro_f1,stability_delta,lift_macro_f1,lift_f1_buy,lift_f1_sell
+mlp_classifier_baseline,0.3286,0.30651125425034426,0.4085,0.3448275862068966,0.1171,0.14728682170542637,0.37687303446759557,0.07036178021725131,-0.022088745749655747,-0.0636724137931034,0.030186821705426373

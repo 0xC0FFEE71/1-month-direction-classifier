@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-09-13T15:04:08.968146+00:00",
+  "model_name": "mlp_classifier_baseline",
+  "model_version": "2026-09-13T15:04:07.124941+00:00",
+  "symbol_count": 0,
+  "prediction_distribution": {},
+  "manifest_reference": "C:\\Users\\fraggable\\AppData\\Local\\hermes\\sandboxes\\docker\\default\\workspace\\projects\\1\u2011month-direction-classifier\\5_tune_model\\production_model_manifest.json",
+  "run_notes": [
+    "Step 6c evaluation is out of scope for this notebook and must remain a separate workflow.",
+    "Open question noted from PRD: step 6c success criteria thresholds are not numerically specified for confidence-layer promotion. This notebook records outputs only; threshold definition must be finalized in the dedicated 6c evaluation notebook."
+  ],
+  "warnings": [
+    "Production model load skipped due to earlier validation errors.",
+    "Primary prediction output is empty; CSV not written.",
+    "Research scaler not found (optional if model does not need it): C:\\Users\\fraggable\\AppData\\Local\\hermes\\sandboxes\\docker\\default\\workspace\\projects\\1\u2011month-direction-classifier\\5_tune_model\\mlp_classifier_baseline_tuned_scaler.pkl",
+    "Research mode output is empty; dual CSV not written.",
+    "Primary output contains zero prediction rows."
+  ],
+  "errors": [
+    "governance_status.passed is not true; production inference blocked.",
+    "No valid latest rows are available for inference."
+  ],
+  "no_trade_disclaimer": "This notebook provides model predictions as a decision template for human review only. It does not execute trades, generate orders, or provide automated portfolio actions.",
+  "research_mode_enabled": true,
+  "research_rows": 0,
+  "research_mode_disclaimer": "Research-mode consensus is descriptive and hypothesis-oriented. It is not a validated confidence layer and is not approved for automated action.",
+  "consensus_status_distribution": {}
+}

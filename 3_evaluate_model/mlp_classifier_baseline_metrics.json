@@ -1,0 +1,214 @@
+{
+  "model_name": "mlp_classifier_baseline",
+  "model_type": "sklearn.neural_network._multilayer_perceptron.MLPClassifier",
+  "hyperparameters": {
+    "activation": "relu",
+    "alpha": 0.001,
+    "batch_size": 64,
+    "beta_1": 0.9,
+    "beta_2": 0.999,
+    "early_stopping": false,
+    "epsilon": 1e-08,
+    "hidden_layer_sizes": [
+      64,
+      32
+    ],
+    "learning_rate": "constant",
+    "learning_rate_init": 0.001,
+    "max_fun": 15000,
+    "max_iter": 500,
+    "momentum": 0.9,
+    "n_iter_no_change": 10,
+    "nesterovs_momentum": true,
+    "power_t": 0.5,
+    "random_state": 42,
+    "shuffle": true,
+    "solver": "adam",
+    "tol": 0.0001,
+    "validation_fraction": 0.1,
+    "verbose": false,
+    "warm_start": false
+  },
+  "data": {
+    "train_start": "2021-06-28T00:00:00",
+    "train_end": "2025-01-28T00:00:00",
+    "val_start": "2025-01-29T00:00:00",
+    "val_end": "2025-11-05T00:00:00",
+    "test_start": "2025-11-06T00:00:00",
+    "test_end": "2026-08-13T00:00:00",
+    "n_train": 2703,
+    "n_val": 585,
+    "n_test": 576
+  },
+  "class_labels": [
+    "buy",
+    "hold",
+    "sell"
+  ],
+  "baseline": {
+    "val": {
+      "macro_f1": 0.1916,
+      "weighted_f1": 0.2319,
+      "balanced_accuracy": 0.3333,
+      "per_class": {
+        "buy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "hold": {
+          "precision": 0.4034,
+          "recall": 1.0,
+          "f1": 0.5749
+        },
+        "sell": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          207,
+          0
+        ],
+        [
+          0,
+          236,
+          0
+        ],
+        [
+          0,
+          142,
+          0
+        ]
+      ]
+    },
+    "test": {
+      "macro_f1": 0.1818,
+      "weighted_f1": 0.2045,
+      "balanced_accuracy": 0.3333,
+      "per_class": {
+        "buy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "hold": {
+          "precision": 0.375,
+          "recall": 1.0,
+          "f1": 0.5455
+        },
+        "sell": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          181,
+          0
+        ],
+        [
+          0,
+          216,
+          0
+        ],
+        [
+          0,
+          179,
+          0
+        ]
+      ]
+    }
+  },
+  "metrics": {
+    "val": {
+      "macro_f1": 0.3408,
+      "weighted_f1": 0.3583,
+      "balanced_accuracy": 0.3617,
+      "per_class": {
+        "buy": {
+          "precision": 0.3871,
+          "recall": 0.6377,
+          "f1": 0.4818
+        },
+        "hold": {
+          "precision": 0.4022,
+          "recall": 0.3136,
+          "f1": 0.3524
+        },
+        "sell": {
+          "precision": 0.3167,
+          "recall": 0.1338,
+          "f1": 0.1881
+        }
+      },
+      "confusion_matrix": [
+        [
+          132,
+          62,
+          13
+        ],
+        [
+          134,
+          74,
+          28
+        ],
+        [
+          75,
+          48,
+          19
+        ]
+      ]
+    },
+    "test": {
+      "macro_f1": 0.3286,
+      "weighted_f1": 0.3374,
+      "balanced_accuracy": 0.3634,
+      "per_class": {
+        "buy": {
+          "precision": 0.3551,
+          "recall": 0.4807,
+          "f1": 0.4085
+        },
+        "hold": {
+          "precision": 0.4028,
+          "recall": 0.537,
+          "f1": 0.4603
+        },
+        "sell": {
+          "precision": 0.3023,
+          "recall": 0.0726,
+          "f1": 0.1171
+        }
+      },
+      "confusion_matrix": [
+        [
+          87,
+          74,
+          20
+        ],
+        [
+          90,
+          116,
+          10
+        ],
+        [
+          68,
+          98,
+          13
+        ]
+      ]
+    }
+  },
+  "notes": {
+    "threshold_buy": 0.05,
+    "threshold_sell": -0.05,
+    "label_definition": "buy if fwd_ret_20d >= 0.05; sell if fwd_ret_20d <= -0.05; hold otherwise",
+    "class_weight_strategy": "none - MLPClassifier does not support class_weight; macro F1 and balanced accuracy are the primary imbalance checks"
+  }
+}

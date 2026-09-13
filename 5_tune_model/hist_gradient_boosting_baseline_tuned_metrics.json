@@ -1,0 +1,158 @@
+{
+  "model_name": "hist_gradient_boosting_baseline",
+  "model_type": "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.HistGradientBoostingClassifier",
+  "search_method": "randomized",
+  "search_budget": "medium",
+  "search_space": {
+    "model__learning_rate": [
+      0.01,
+      0.02,
+      0.05,
+      0.1
+    ],
+    "model__max_iter": [
+      200,
+      300,
+      500
+    ],
+    "model__max_depth": [
+      3,
+      5,
+      6,
+      8,
+      null
+    ],
+    "model__max_leaf_nodes": [
+      15,
+      31,
+      63
+    ],
+    "model__min_samples_leaf": [
+      10,
+      20,
+      40
+    ],
+    "model__l2_regularization": [
+      0.0,
+      0.1,
+      1.0
+    ],
+    "model__early_stopping": [
+      true
+    ]
+  },
+  "best_params": {
+    "model__min_samples_leaf": 40,
+    "model__max_leaf_nodes": 15,
+    "model__max_iter": 300,
+    "model__max_depth": 3,
+    "model__learning_rate": 0.1,
+    "model__l2_regularization": 0.0,
+    "model__early_stopping": true
+  },
+  "cv_results_summary": {
+    "best_cv_score": 0.36537705452541164,
+    "n_trials": 50
+  },
+  "data": {
+    "train_start": "2021-06-28",
+    "train_end": "2025-01-29",
+    "val_start": "2025-01-29",
+    "val_end": "2025-11-04",
+    "test_start": "2025-11-04",
+    "test_end": "2026-08-13",
+    "n_train": 2704,
+    "n_val": 580,
+    "n_test": 580
+  },
+  "baseline_test_metrics": {
+    "macro_f1": 0.3844,
+    "weighted_f1": 0.3835,
+    "balanced_accuracy": 0.4081,
+    "per_class": {
+      "buy": {
+        "precision": 0.3935,
+        "recall": 0.674,
+        "f1": 0.4969
+      },
+      "hold": {
+        "precision": 0.3967,
+        "recall": 0.338,
+        "f1": 0.365
+      },
+      "sell": {
+        "precision": 0.4634,
+        "recall": 0.2123,
+        "f1": 0.2912
+      }
+    },
+    "confusion_matrix": [
+      [
+        122,
+        44,
+        15
+      ],
+      [
+        114,
+        73,
+        29
+      ],
+      [
+        74,
+        67,
+        38
+      ]
+    ]
+  },
+  "tuned_val_metrics": {
+    "macro_f1": 0.36537705452541164
+  },
+  "tuned_test_metrics": {
+    "accuracy": 0.4,
+    "balanced_accuracy": 0.39377002447084936,
+    "macro_f1": 0.3935033028330733,
+    "weighted_f1": 0.3969165995577749,
+    "f1_buy": 0.3323442136498516,
+    "f1_hold": 0.44583333333333336,
+    "f1_sell": 0.40233236151603496,
+    "confusion_matrix": [
+      [
+        56,
+        79,
+        46
+      ],
+      [
+        64,
+        107,
+        48
+      ],
+      [
+        36,
+        75,
+        69
+      ]
+    ]
+  },
+  "comparison": {
+    "baseline_test_macro_f1": 0.3844,
+    "tuned_test_macro_f1": 0.3935033028330733,
+    "lift_test_macro_f1": 0.009103302833073257,
+    "baseline_test_f1_buy": 0.4969,
+    "tuned_test_f1_buy": 0.3323442136498516,
+    "baseline_test_f1_sell": 0.2912,
+    "tuned_test_f1_sell": 0.40233236151603496,
+    "stability_delta": -0.02812624830766164,
+    "flag_instability": false
+  },
+  "governance": {
+    "passed": true,
+    "reasons": [],
+    "flag_instability": false,
+    "val_macro_f1": 0.36537705452541164,
+    "test_macro_f1": 0.3935033028330733,
+    "test_f1_buy": 0.3323442136498516,
+    "test_f1_sell": 0.40233236151603496
+  },
+  "already_tuned": true,
+  "created_at": "2026-09-13T15:03:54.324883+00:00"
+}

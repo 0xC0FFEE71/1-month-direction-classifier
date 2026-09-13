@@ -1,0 +1,203 @@
+{
+  "model_name": "logistic_regression_baseline",
+  "model_type": "sklearn.linear_model._logistic.LogisticRegression",
+  "hyperparameters": {
+    "C": 1.0,
+    "class_weight": "balanced",
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": null,
+    "max_iter": 2000,
+    "multi_class": "multinomial",
+    "n_jobs": null,
+    "penalty": "l2",
+    "random_state": 42,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "data": {
+    "train_start": "2021-06-28T00:00:00",
+    "train_end": "2025-01-28T00:00:00",
+    "val_start": "2025-01-29T00:00:00",
+    "val_end": "2025-11-05T00:00:00",
+    "test_start": "2025-11-06T00:00:00",
+    "test_end": "2026-08-13T00:00:00",
+    "n_train": 2703,
+    "n_val": 585,
+    "n_test": 576
+  },
+  "class_labels": [
+    "buy",
+    "hold",
+    "sell"
+  ],
+  "baseline": {
+    "val": {
+      "macro_f1": 0.1916,
+      "weighted_f1": 0.2319,
+      "balanced_accuracy": 0.3333,
+      "per_class": {
+        "buy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "hold": {
+          "precision": 0.4034,
+          "recall": 1.0,
+          "f1": 0.5749
+        },
+        "sell": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          207,
+          0
+        ],
+        [
+          0,
+          236,
+          0
+        ],
+        [
+          0,
+          142,
+          0
+        ]
+      ]
+    },
+    "test": {
+      "macro_f1": 0.1818,
+      "weighted_f1": 0.2045,
+      "balanced_accuracy": 0.3333,
+      "per_class": {
+        "buy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "hold": {
+          "precision": 0.375,
+          "recall": 1.0,
+          "f1": 0.5455
+        },
+        "sell": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          181,
+          0
+        ],
+        [
+          0,
+          216,
+          0
+        ],
+        [
+          0,
+          179,
+          0
+        ]
+      ]
+    }
+  },
+  "metrics": {
+    "val": {
+      "macro_f1": 0.3628,
+      "weighted_f1": 0.3786,
+      "balanced_accuracy": 0.363,
+      "per_class": {
+        "buy": {
+          "precision": 0.3676,
+          "recall": 0.3623,
+          "f1": 0.365
+        },
+        "hold": {
+          "precision": 0.4527,
+          "recall": 0.4661,
+          "f1": 0.4593
+        },
+        "sell": {
+          "precision": 0.2681,
+          "recall": 0.2606,
+          "f1": 0.2643
+        }
+      },
+      "confusion_matrix": [
+        [
+          75,
+          83,
+          49
+        ],
+        [
+          74,
+          110,
+          52
+        ],
+        [
+          55,
+          50,
+          37
+        ]
+      ]
+    },
+    "test": {
+      "macro_f1": 0.3004,
+      "weighted_f1": 0.3108,
+      "balanced_accuracy": 0.3628,
+      "per_class": {
+        "buy": {
+          "precision": 0.3662,
+          "recall": 0.5746,
+          "f1": 0.4473
+        },
+        "hold": {
+          "precision": 0.4066,
+          "recall": 0.5139,
+          "f1": 0.454
+        },
+        "sell": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          104,
+          65,
+          12
+        ],
+        [
+          98,
+          111,
+          7
+        ],
+        [
+          82,
+          97,
+          0
+        ]
+      ]
+    }
+  },
+  "notes": {
+    "threshold_buy": 0.05,
+    "threshold_sell": -0.05,
+    "label_definition": "buy if fwd_ret_20d >= 0.05; sell if fwd_ret_20d <= -0.05; hold otherwise",
+    "class_weight_strategy": "balanced class weights via LogisticRegression(class_weight=\"balanced\")"
+  }
+}

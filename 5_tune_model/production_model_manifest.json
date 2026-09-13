@@ -1,0 +1,99 @@
+{
+  "model_name": "mlp_classifier_baseline",
+  "model_type": "sklearn.neural_network._multilayer_perceptron.MLPClassifier",
+  "model_path": "5_tune_model\\mlp_classifier_baseline_tuned_model.pkl",
+  "feature_columns": [
+    "ret_1d",
+    "log_ret_1d",
+    "ret_5d",
+    "ret_10d",
+    "ret_20d",
+    "ret_60d",
+    "log_ret_5d",
+    "log_ret_20d",
+    "tr_range",
+    "true_range",
+    "sma_5",
+    "sma_20",
+    "sma_50",
+    "sma_200",
+    "close_over_sma_20",
+    "close_over_sma_50",
+    "close_over_sma_200",
+    "sma_20_slope_5d",
+    "sma_50_slope_5d",
+    "vol_ret_5d",
+    "vol_ret_20d",
+    "vol_ret_60d",
+    "vol_tr_5d",
+    "vol_tr_20d",
+    "value_traded",
+    "vol_ma_20",
+    "vol_ma_60",
+    "vol_rel_20",
+    "value_traded_ma_20",
+    "value_traded_rel_20",
+    "rsi_14",
+    "macd",
+    "macd_signal",
+    "macd_hist",
+    "atr_14",
+    "hh_20d",
+    "ll_20d",
+    "dist_from_20d_high",
+    "dist_from_20d_low"
+  ],
+  "label_mapping": {
+    "buy": 0,
+    "hold": 1,
+    "sell": 2
+  },
+  "label_thresholds": {
+    "buy": 0.05,
+    "sell": -0.05
+  },
+  "prediction_horizon_days": 20,
+  "scaler_required": true,
+  "scaler_path": null,
+  "training_data_end": "2025-11-04",
+  "test_metrics": {
+    "accuracy": 0.33620689655172414,
+    "balanced_accuracy": 0.32543805062915027,
+    "macro_f1": 0.30651125425034426,
+    "weighted_f1": 0.3147073443450042,
+    "f1_buy": 0.3448275862068966,
+    "f1_hold": 0.4274193548387097,
+    "f1_sell": 0.14728682170542637,
+    "confusion_matrix": [
+      [
+        70,
+        78,
+        33
+      ],
+      [
+        87,
+        106,
+        26
+      ],
+      [
+        68,
+        93,
+        19
+      ]
+    ]
+  },
+  "governance_status": {
+    "passed": false,
+    "reasons": [
+      "fail_test_macro_f1",
+      "fail_test_f1_sell",
+      "flag_instability"
+    ],
+    "flag_instability": true,
+    "val_macro_f1": 0.37687303446759557,
+    "test_macro_f1": 0.30651125425034426,
+    "test_f1_buy": 0.3448275862068966,
+    "test_f1_sell": 0.14728682170542637
+  },
+  "created_at": "2026-09-13T15:04:07.124941+00:00"
+}

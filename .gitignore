@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Secrets — NEVER commit API keys
+config.py
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated data (keep universe CSVs and DEMO_003 for reproducibility)
+data/S&P_500/
+data/STOXX_600/
+
+# Model artifacts (regeneratable from notebooks)
+3_evaluate_model/*.pkl
+5_tune_model/*.pkl
+
+# Generated run artifacts (regeneratable)
+_full_notebook_run_results.json
