@@ -1,0 +1,20 @@
+# Normalize line endings: LF in repo, CRLF on Windows checkout
+* text=auto eol=lf
+
+# Notebooks are JSON — always LF
+*.ipynb text eol=lf
+
+# Python files — always LF
+*.py text eol=lf
+
+# Markdown — always LF
+*.md text eol=lf
+
+# JSON/CSV — always LF
+*.json text eol=lf
+*.csv text eol=lf
+
+# Binary files — no line ending conversion
+*.pkl binary
+*.parquet binary
+*.xlsx binary
