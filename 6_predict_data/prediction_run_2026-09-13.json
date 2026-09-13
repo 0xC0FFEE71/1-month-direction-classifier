@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-13T16:24:24.883757+00:00",
+  "generated_at": "2026-09-13T16:29:58.412288+00:00",
   "model_name": "mlp_classifier_baseline",
-  "model_version": "2026-09-13T16:19:14.445805+00:00",
+  "model_version": "2026-09-13T16:29:52.366960+00:00",
   "symbol_count": 0,
   "prediction_distribution": {},
   "manifest_reference": "/workspace/projects/1-month-direction-classifier/5_tune_model/production_model_manifest.json",
