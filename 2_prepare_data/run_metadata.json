@@ -1,5 +1,5 @@
 {
-  "run_timestamp": "2026-09-13T15:03:14.157510Z",
+  "run_timestamp": "2026-09-13T16:26:32.514218Z",
   "universe_csv_name": "DEMO_003",
   "configuration": {
     "LOOKBACK_YEARS": 6,
@@ -43,7 +43,7 @@
     "n_symbols": 3,
     "n_feature_cols": 39,
     "output_files": [
-      "C:\\Users\\fraggable\\AppData\\Local\\hermes\\sandboxes\\docker\\default\\workspace\\projects\\1\u2011month-direction-classifier\\2_prepare_data\\prepared_dataset.parquet"
+      "/workspace/projects/1-month-direction-classifier/2_prepare_data/prepared_dataset.parquet"
     ]
   }
 }

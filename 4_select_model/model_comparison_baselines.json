@@ -1,24 +1,24 @@
 {
-  "generated_at_utc": "2026-09-13T15:03:36.719624+00:00",
+  "generated_at_utc": "2026-09-13T16:26:20.059324+00:00",
   "notebook_name": "4_select_model.ipynb",
   "models": [
     {
-      "model_name": "hist_gradient_boosting_baseline",
-      "model_type": "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.HistGradientBoostingClassifier",
-      "val_macro_f1": 0.3919,
-      "test_macro_f1": 0.3844,
-      "val_weighted_f1": 0.4022,
-      "test_weighted_f1": 0.3835,
-      "val_balanced_accuracy": 0.414,
-      "test_balanced_accuracy": 0.4081,
-      "val_f1_buy": 0.5351,
-      "test_f1_buy": 0.4969,
-      "val_f1_sell": 0.2836,
-      "test_f1_sell": 0.2912,
-      "val_recall_buy": 0.7005,
-      "test_recall_buy": 0.674,
-      "val_recall_sell": 0.2746,
-      "test_recall_sell": 0.2123,
+      "model_name": "random_forest_baseline",
+      "model_type": "sklearn.ensemble._forest.RandomForestClassifier",
+      "val_macro_f1": 0.3754,
+      "test_macro_f1": 0.3847,
+      "val_weighted_f1": 0.3828,
+      "test_weighted_f1": 0.372,
+      "val_balanced_accuracy": 0.3882,
+      "test_balanced_accuracy": 0.4186,
+      "val_f1_buy": 0.4875,
+      "test_f1_buy": 0.4738,
+      "val_f1_sell": 0.2949,
+      "test_f1_sell": 0.4972,
+      "val_recall_buy": 0.5652,
+      "test_recall_buy": 0.6243,
+      "val_recall_sell": 0.3239,
+      "test_recall_sell": 0.4972,
       "rank_val_macro_f1": 1,
       "rank_test_macro_f1": 1,
       "flag_instability": false,
@@ -31,44 +31,44 @@
       "decision_rationale": "selected_for_tuning|provisional_production_candidate|pass"
     },
     {
-      "model_name": "random_forest_baseline",
-      "model_type": "sklearn.ensemble._forest.RandomForestClassifier",
-      "val_macro_f1": 0.3655,
-      "test_macro_f1": 0.3346,
-      "val_weighted_f1": 0.3697,
-      "test_weighted_f1": 0.3205,
-      "val_balanced_accuracy": 0.3814,
-      "test_balanced_accuracy": 0.38,
-      "val_f1_buy": 0.4774,
-      "test_f1_buy": 0.4602,
-      "val_f1_sell": 0.3048,
-      "test_f1_sell": 0.4359,
-      "val_recall_buy": 0.5604,
-      "test_recall_buy": 0.5912,
-      "val_recall_sell": 0.338,
-      "test_recall_sell": 0.4749,
+      "model_name": "hist_gradient_boosting_baseline",
+      "model_type": "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.HistGradientBoostingClassifier",
+      "val_macro_f1": 0.3738,
+      "test_macro_f1": 0.3688,
+      "val_weighted_f1": 0.3831,
+      "test_weighted_f1": 0.3671,
+      "val_balanced_accuracy": 0.4041,
+      "test_balanced_accuracy": 0.3854,
+      "val_f1_buy": 0.5487,
+      "test_f1_buy": 0.4661,
+      "val_f1_sell": 0.2618,
+      "test_f1_sell": 0.3037,
+      "val_recall_buy": 0.7343,
+      "test_recall_buy": 0.6077,
+      "val_recall_sell": 0.2535,
+      "test_recall_sell": 0.2291,
       "rank_val_macro_f1": 2,
-      "rank_test_macro_f1": 3,
-      "flag_instability": false,
-      "eligible_for_tuning": true,
-      "eligibility_reason_code": "pass",
+      "rank_test_macro_f1": 2,
+      "flag_instability": true,
+      "eligible_for_tuning": false,
+      "eligibility_reason_code": "flag_instability",
       "is_baseline": true,
       "already_tuned": false,
-      "selected_for_tuning": true,
+      "selected_for_tuning": false,
       "is_provisional_production_candidate": false,
-      "decision_rationale": "selected_for_tuning|pass"
+      "decision_rationale": "not_selected|flag_instability"
     },
     {
       "model_name": "logistic_regression_baseline",
       "model_type": "sklearn.linear_model._logistic.LogisticRegression",
       "val_macro_f1": 0.3628,
-      "test_macro_f1": 0.3004,
+      "test_macro_f1": 0.2991,
       "val_weighted_f1": 0.3786,
-      "test_weighted_f1": 0.3108,
+      "test_weighted_f1": 0.3093,
       "val_balanced_accuracy": 0.363,
-      "test_balanced_accuracy": 0.3628,
+      "test_balanced_accuracy": 0.3613,
       "val_f1_buy": 0.365,
-      "test_f1_buy": 0.4473,
+      "test_f1_buy": 0.4464,
       "val_f1_sell": 0.2643,
       "test_f1_sell": 0.0,
       "val_recall_buy": 0.3623,
@@ -104,7 +104,7 @@
       "val_recall_sell": 0.2676,
       "test_recall_sell": 0.3631,
       "rank_val_macro_f1": 4,
-      "rank_test_macro_f1": 2,
+      "rank_test_macro_f1": 3,
       "flag_instability": false,
       "eligible_for_tuning": true,
       "eligibility_reason_code": "pass",
@@ -172,11 +172,10 @@
     }
   ],
   "tuning_candidates": [
-    "hist_gradient_boosting_baseline",
     "random_forest_baseline",
     "extra_trees_baseline"
   ],
-  "provisional_production_candidate": "hist_gradient_boosting_baseline",
+  "provisional_production_candidate": "random_forest_baseline",
   "selection_rules": {
     "primary_metric": "test_macro_f1",
     "constraints": {
@@ -190,82 +189,8 @@
       "inference_cost"
     ]
   },
-  "decision_policy_note": "Top eligible model treated as clearly superior under configured dominance margin.",
+  "decision_policy_note": "No clearly superior model under configured dominance margin; keep multiple tuning candidates.",
   "tuning_recommendations": {
-    "hist_gradient_boosting_baseline": {
-      "model_type": "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.HistGradientBoostingClassifier",
-      "template_key": "HistGradientBoostingClassifier",
-      "current_hyperparameters": {
-        "categorical_features": "from_dtype",
-        "class_weight": null,
-        "early_stopping": false,
-        "interaction_cst": null,
-        "l2_regularization": 0.1,
-        "learning_rate": 0.05,
-        "loss": "log_loss",
-        "max_bins": 255,
-        "max_depth": 6,
-        "max_features": 1.0,
-        "max_iter": 500,
-        "max_leaf_nodes": 31,
-        "min_samples_leaf": 20,
-        "monotonic_cst": null,
-        "n_iter_no_change": 10,
-        "random_state": 42,
-        "scoring": "loss",
-        "tol": 1e-07,
-        "validation_fraction": 0.1,
-        "verbose": 0,
-        "warm_start": false
-      },
-      "recommended_search_space": {
-        "learning_rate": [
-          0.01,
-          0.03,
-          0.05,
-          0.1
-        ],
-        "max_depth": [
-          null,
-          4,
-          6,
-          8
-        ],
-        "max_leaf_nodes": [
-          15,
-          31,
-          63
-        ],
-        "max_iter": [
-          200,
-          400,
-          800
-        ],
-        "l2_regularization": [
-          0.0,
-          0.01,
-          0.1,
-          1.0
-        ],
-        "min_samples_leaf": [
-          10,
-          20,
-          40
-        ]
-      },
-      "budget_preset": "medium",
-      "budget_details": {
-        "n_iter": 50,
-        "grid_size": "standard"
-      },
-      "search_method": "RandomizedSearchCV",
-      "time_series_cv": {
-        "strategy": "TimeSeriesSplit",
-        "n_splits": 4
-      },
-      "scoring_metric": "f1_macro",
-      "selection_rule": "Keep hyperparameters with best validation macro F1"
-    },
     "random_forest_baseline": {
       "model_type": "sklearn.ensemble._forest.RandomForestClassifier",
       "template_key": "RandomForestClassifier",

@@ -7,9 +7,8 @@
     "dual": false,
     "fit_intercept": true,
     "intercept_scaling": 1,
-    "l1_ratio": null,
+    "l1_ratio": 0.0,
     "max_iter": 2000,
-    "multi_class": "multinomial",
     "n_jobs": null,
     "penalty": "l2",
     "random_state": 42,
@@ -155,19 +154,19 @@
       ]
     },
     "test": {
-      "macro_f1": 0.3004,
-      "weighted_f1": 0.3108,
-      "balanced_accuracy": 0.3628,
+      "macro_f1": 0.2991,
+      "weighted_f1": 0.3093,
+      "balanced_accuracy": 0.3613,
       "per_class": {
         "buy": {
-          "precision": 0.3662,
+          "precision": 0.3649,
           "recall": 0.5746,
-          "f1": 0.4473
+          "f1": 0.4464
         },
         "hold": {
-          "precision": 0.4066,
-          "recall": 0.5139,
-          "f1": 0.454
+          "precision": 0.4044,
+          "recall": 0.5093,
+          "f1": 0.4508
         },
         "sell": {
           "precision": 0.0,
@@ -182,8 +181,8 @@
           12
         ],
         [
-          98,
-          111,
+          99,
+          110,
           7
         ],
         [
